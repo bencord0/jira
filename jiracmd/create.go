@@ -156,14 +156,9 @@ func defaultIssueType(o *oreo.Client, endpoint string, project, issuetype *strin
 		issueTypes[issuetype.Name] = true
 	}
 
-	//  prefer "Bug" type
-	if _, ok := issueTypes["Bug"]; ok {
-		*issuetype = "Bug"
-		return nil
-	}
-	// next best default it "Task"
-	if _, ok := issueTypes["Task"]; ok {
-		*issuetype = "Task"
+	//  prefer "Story" type
+	if _, ok := issueTypes["Story"]; ok {
+		*issuetype = "Story"
 		return nil
 	}
 
